@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Brzi fast food{% endblock %}</title>
+    <title>{% block title %}Brzi Fast food{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <header>
     <div class="container sredina">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Brzi fast food">
-        <h1>Brzi fast food</h1>
-        <h3>najbrža dostava u gradu</h3>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Brzi Fast food">
+        <h1>Brzi Fast food</h1>
+        <h3>Najbrža dostava u gradu</h3>
     </div>
 </header>
 
 <main>
     <div class="container sredina">
         {% block content %}
-        <!-- Sadržaj stranice ide ovde -->
         {% endblock %}
     </div>
 </main>
