@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>{% block title %}Brzi fast food{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <header>
     <div class="container sredina">
-        <img src="logo.jpg" alt="Brzi fast food">
-        <h3>najbrza dostava u gradu</h3>
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Brzi fast food">
+        <h1>Brzi fast food</h1>
+        <h3>najbrža dostava u gradu</h3>
     </div>
 </header>
 
 <main>
     <div class="container sredina">
-        <h2>Restorani</h2>
-        <ul>
-            <li>ABC</li>
-            <li>Lele</li>
-            <li>Oskar</li>
-            <li>Cap Cap</li>
-            <li>Promenada</li>
-        </ul>
+        {% block content %}
+        <!-- Sadržaj stranice ide ovde -->
+        {% endblock %}
     </div>
 </main>
 
@@ -33,6 +29,7 @@
         <h4>Brzi doo, Leskovac</h4>
         <p>Proleterska 34</p>
         <h4>065 256 256</h4>
+        <p>&copy; 2026 Sva prava zadržana</p>
     </div>
 </footer>
 

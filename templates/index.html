@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Brzi restorani</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <header>            
-        <div class="container">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
-            <h1>Brzi restorani</h1>
-        </div>
-    </header>
-    
-    <main>
-        <div class="sredina">
-            <h2>{{ naziv }}</h2>
-            <ul>
-                {% for item in spisak %}
-                    <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    </main>
-    
-    <footer>
-        <p>Brzi doo, Leskovac</p>
-        <p>Copyright 2026</p>
-        <p>+381 64 123 456</p>
-    </footer>
-</body>
-</html>
-</html>
+{% extends "osnova.html" %}
+
+{% block title %}Početna - Brzi fast food{% endblock %}
+
+{% block content %}
+    <h2>{{ naziv }}</h2>
+    <ul>
+        {% for item in spisak %}
+            <li><a href="/restorani/1">{{ item }}</a></li>
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="/restorani" class="btn">Pogledaj sve restorane</a>
+        <a href="/primer-html" class="btn">Primer HTML</a>
+        <a href="/primer-json" class="btn">Primer JSON</a>
+    </div>
+{% endblock %}
