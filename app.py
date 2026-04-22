@@ -45,7 +45,7 @@ def  primerHTML():
     <link rel="stylesheet" href=:static/style.css">
     </head>
     <body>
-        <h1>Zdravo budale<h1>
+        <h1>Zdravo programeri<h1>
     </body>
     </html>"""
     return data
