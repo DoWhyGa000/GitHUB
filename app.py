@@ -9,29 +9,29 @@ CORS(app)
 @app.route("/")
 def index():
     nazivSpiska = "Spisak restorana"
-    spisakRestorana = ["Pastica", "Pica Tim", "HasHub", "Sahara"]
+    spisakRestorana = ["Pastica","Pica Tim","HasHub","Sahara"]
     return render_template("index.html", naziv=nazivSpiska, spisak=spisakRestorana)
 
 @app.route("/restorani")
 def restorani():
     nazivRestorana = "Spisak restorana"
-    spisakRestorani = ["Pastica", "Pica Tim", "HasHub", "Sahara"]
+    spisakRestorani = ["Pastica","Pica Tim","HasHub","Sahara"]
     return render_template("restorani.html", naziv=nazivRestorana, spisak=spisakRestorani)
 
 @app.route("/restorani/1")
 def meni():
     nazivMeni = "Meni restorana"
-    spisakMeni = ["Pica Margarita", "Pica Capricciosa", "Pica Vesuvio", "Pica Quattro Stagioni"]
-    return render_template("meni.html", naziv=nazivMeni, spisak=spisakMeni)
+    spisakMeni = ["Pastica","Pica Tim","HasHub","Sahara"]
+    return render_template("meno.html", naziv=nazivMeni, spisak=spisakMeni)
 
 @app.route("/primer-niz")
 def niz():
-    nekiNiz = [1, 2, 3, 4, 5]
+    nekiNiz = [1,2,3,4,5]
     return jsonify(nekiNiz)
 
 @app.route("/primer-json")
 def primerJson():
-    data = {"message": "This is a JSON response", "status": "success"}
+    data = {"message":"This is a JSON response","status":"success"}
     return jsonify(data)
 
 @app.route("/primer-html")
@@ -41,8 +41,9 @@ def primerHTML():
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/style.css">
     </head>
     <body>
         <h1>Zdravo programeri</h1>
@@ -50,5 +51,5 @@ def primerHTML():
     </html>"""
     return data
 
-if __name__ == "__main__":
+if __name__== "__main__":
     app.run(debug=True)
