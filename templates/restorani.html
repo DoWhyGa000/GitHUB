@@ -1,31 +1,35 @@
-  <!DOCTYPE hmtl>
-    <html lang="en">
-    <head>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" contet="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href= "style.css">
-    </head>
-    <body>
-        <header>            
-            <div class="container">
-                <img src="logo.jpg" alt="slika">
-                <h1>Brzi</h1>
-            </div>
-        </header>
-        <main>
+    <title>Restorani</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>            
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+            <h1>Brzi restorani</h1>
+        </div>
+    </header>
+    
+    <main>
+        <div class="sredina">
+            <h2>{{ naziv }}</h2>
             <ul>
-                <h1>{{naziv}}</h1>
-            {% for item in spisak %}
-                <li>{{item}}</li>
-            {% endfor %}
+                {% for item in spisak %}
+                    <li>{{ item }}</li>
+                {% endfor %}
             </ul>
-        </main>
-        <footer>
-            <h4>Brzi doo, Leskovac</h4>
-            <h4>Copyright 2024</h4>
-            <h4>+381 64 123 456</h4>
-        </footer>
-    </body>
-    </html>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Brzi doo, Leskovac</p>
+        <p>Copyright 2026</p>
+        <p>+381 64 123 456</p>
+    </footer>
+</body>
+</html>

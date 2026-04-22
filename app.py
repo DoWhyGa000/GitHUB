@@ -4,52 +4,51 @@ from flask import Flask, request, jsonify, json, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def index():
     nazivSpiska = "Spisak restorana"
-    spisakRestorana = ["Pastica","Pica Tim","HasHub","Sahara"]
-    return  render_template("index.html", naziv=nazivSpiska, spisak=spisakRestorana)
+    spisakRestorana = ["Pastica", "Pica Tim", "HasHub", "Sahara"]
+    return render_template("index.html", naziv=nazivSpiska, spisak=spisakRestorana)
 
 @app.route("/restorani")
-def  restorani():
+def restorani():
     nazivRestorana = "Spisak restorana"
-    spisakRestorani = ["Pastica","Pica Tim","HasHub","Sahara"]
-    return  render_template("restorani.html", naziv=nazivRestorana, spisak=spisakRestorani)
+    spisakRestorani = ["Pastica", "Pica Tim", "HasHub", "Sahara"]
+    return render_template("restorani.html", naziv=nazivRestorana, spisak=spisakRestorani)
 
 @app.route("/restorani/1")
-def  meni():
+def meni():
     nazivMeni = "Meni restorana"
-    spisakMeni = ["Pastica","Pica Tim","HasHub","Sahara"]
-    return  render_template("meno.html", naziv=nazivMeni, spisak=spisakMeni)
+    spisakMeni = ["Pica Margarita", "Pica Capricciosa", "Pica Vesuvio", "Pica Quattro Stagioni"]
+    return render_template("meni.html", naziv=nazivMeni, spisak=spisakMeni)
 
 @app.route("/primer-niz")
-def  niz():
-    nekiNiz = [1,2,3,4,5]
-    return nekiNiz
+def niz():
+    nekiNiz = [1, 2, 3, 4, 5]
+    return jsonify(nekiNiz)
 
 @app.route("/primer-json")
-def  primerJson():
-    data = {"message":"This is a JSON response","status":"success"}
+def primerJson():
+    data = {"message": "This is a JSON response", "status": "success"}
     return jsonify(data)
 
 @app.route("/primer-html")
-def  primerHTML():
-    data = """<!DOCTYPE hmtl>
+def primerHTML():
+    data = """<!DOCTYPE html>
     <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <meta name="viewport" contet="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href=:static/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     </head>
     <body>
-        <h1>Zdravo programeri<h1>
+        <h1>Zdravo programeri</h1>
     </body>
     </html>"""
     return data
 
-  
-if __name__== "__main__":
-    app.run()        
+if __name__ == "__main__":
+    app.run(debug=True)
