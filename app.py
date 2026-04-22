@@ -43,7 +43,7 @@ restorani = {
 
 @app.route("/")
 def index():
-    restorani= ["Pastica", "Pica Tim", "HasHub", "Sahara", "ABC", "Lele", "Oskar", "Cap Cap", "Promenada"]
+    restorani= ["Margarita", "Capricciosa", "Vesuvio", "Piletina"]
     return render_template("index.html", 
                          naslov="Spisak restorana", 
                          spisak=restorani)
