@@ -1,15 +1,13 @@
 {% extends "osnova.html" %}
 
-{% block title %}Restorani - Brzi Fast food{% endblock %}
+{% block title %}Restorani - Ćafi's Spot{% endblock %}
 
 {% block content %}
-    <h2>{{ naziv }}</h2>
+    <h2>{{ naslov }}</h2>
     <ul>
-        {% for item in spisak %}
-            <li><a href="/restorani/1">{{ item }}</a></li>
+        {% for k in spisak %}
+            <li><a href="/restoran/{{ k }}">{{ restorani[k].naziv }}</a></li>
         {% endfor %}
     </ul>
-    <div>
-        <a href="/" class="btn">Nazad na početnu</a>
-    </div>
+    <a href="/" class="btn">Nazad na početnu</a>
 {% endblock %}
