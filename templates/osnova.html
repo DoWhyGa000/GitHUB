@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Ćafi's Spot{% endblock %}</title>
+    <title>{% block title %}Smiljko's Spot{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <header>
     <div class="container sredina">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
-        <h1>Ćafi's Spot</h1>
-        <h3>Gladni? Mi stižemo za 30 minuta!</h3>
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
+        <h1>Smiljko's Spot</h1>
+        <h3>Gladni? Mi stižemo za 15 minuta!</h3>
     </div>
 </header>
 
@@ -22,6 +22,21 @@
         {% endblock %}
     </div>
 </main>
+
+<footer>
+    <div class="container sredina">
+        <h4>📍 Smiljko's Spot - Dostava hrane</h4>
+        <p>Bulevar Oslobođenja bb, Leskovac</p>
+        <p>📞 060 22 3131 44 | 2192 29</p>
+        <p>✉️ dostava@smiljkospot.rs</p>
+        <p>🕒 Pon - Ned: 07:00 - 00:00</p>
+        <p>🚚 Besplatna dostava za porudžbine preko 500 RSD</p>
+        <p>&copy; 2026 Smiljko's Spot - Sva prava zadržana</p>
+    </div>
+</footer>
+
+</body>
+</html>
 
 <footer>
     <div class="container sredina">
